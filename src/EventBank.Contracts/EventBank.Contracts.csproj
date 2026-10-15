@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>Integration messages exchanged by the EventBank microservices over RabbitMQ.</Description>
+  </PropertyGroup>
+</Project>

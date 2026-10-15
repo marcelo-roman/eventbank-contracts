@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/EventBank.Contracts/EventBank.Contracts.csproj" />
+  </Folder>
+</Solution>
