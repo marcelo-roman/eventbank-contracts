@@ -12,7 +12,7 @@
     <NoWarn>$(NoWarn);CA1848;CA1716;CA1711;CA1062;CS1591;NU1507</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <Authors>Marcelo Roman</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/marcelo-roman/eventbank-contracts</RepositoryUrl>

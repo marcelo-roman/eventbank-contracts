@@ -4,14 +4,21 @@ The messages the [EventBank](https://github.com/marcelo-roman/eventbank-platform
 
 | Message | Published by | Consumed by | Meaning |
 | --- | --- | --- | --- |
-| `AccountOpened` | Accounts | Transfers | A new account exists; Transfers adds it to its local directory |
-| `AccountClosed` | Accounts | Transfers | The account no longer accepts transfers |
+| `CustomerRegistered` | Customers | Notifications | Someone applied to become a customer |
+| `CustomerApproved` | Customers | Accounts, Transfers, Notifications | The application was approved; Accounts opens the checking account |
+| `CustomerRejected` | Customers | Notifications | The application was rejected, with a reason |
+| `AccountOpened` | Accounts | Transfers, Cards, Notifications | A new account exists, with its owner and number |
+| `AccountClosed` | Accounts | Transfers, Cards | The account no longer accepts transfers or card purchases |
 | `DebitAccount` | Transfers | Accounts | Take the amount from the source account for this transfer |
 | `AccountDebited` / `AccountDebitDeclined` | Accounts | Transfers | The debit happened, or was declined with a reason |
 | `CreditAccount` | Transfers | Accounts | Give the amount to the destination account |
 | `AccountCredited` / `AccountCreditDeclined` | Accounts | Transfers | The credit happened, or was declined with a reason |
 | `RefundAccount` | Transfers | Accounts | Compensation: return a debited amount to the source |
 | `AccountRefunded` | Accounts | Transfers | The refund happened; the transfer is reversed |
+| `TransferCompleted` | Transfers | Notifications | Money arrived at the destination |
+| `ChargeAccount` | Cards | Accounts | Charge a card purchase to the card's account |
+| `AccountCharged` / `AccountChargeDeclined` | Accounts | Cards | The charge happened, or was declined with a reason |
+| `CardPurchaseCaptured` / `CardPurchaseDeclined` | Cards | Notifications | The outcome of a card purchase |
 
 Messages are records of primitives (`Guid`, `decimal`, `string`) so that no service leaks its value objects into another.
 
